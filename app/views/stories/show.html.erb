@@ -8,6 +8,23 @@
   <%=h @story.description %>
 </p>
 
+<h2>Tasks<h2>
+<div id="tasks">
+  <%= render :partial => @story.tasks %>
+</div>
+
+<% form_for [@story, Task.new] do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
 
 <%= link_to 'Edit', edit_story_path(@story) %> |
 <%= link_to 'Back', stories_path %>
+
