@@ -1,3 +1,4 @@
 features_report.html
-/nbproject
-logs/*
+nbproject
+*.log
+coverage
